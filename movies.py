@@ -2,7 +2,7 @@ import requests                #For making request to a web page and print respo
 from bs4 import BeautifulSoup  #Python library for web scraping (for puling data out of tml and xml file)
 
 
-def movies_in_theatre(url):
+def movies_in_city(url):
     
     code=requests.get(url)                          #Response Object (code) --- sending GET request to specified URL
     text=code.text                                  #Reading text from response object
@@ -15,9 +15,9 @@ def movies_in_theatre(url):
         movie_name+=str(i)+"."+title+" "+link+"\n"           # storing movie nanme title and booking link at one place
         i+=1
 
-    fw = open('Movies_in_my_city.txt', 'w')         # Creating and opening a file named Movies_in_my_city.txt in write mode
+    fw = open('Movies_in_city.txt', 'w')         # Creating and opening a file named Movies_in_my_city.txt in write mode
     fw.write(movie_name)                            # writing movie_name variable (having all data) in this file
     fw.close()                                      #closing the file
 
-city=input("Enter a valid city name: ")
-movies_in_theatre("https://in.bookmyshow.com/"+city+"/movies") #Passing URL to the function
+city=input("Enter City : ")
+movies_in_city("https://in.bookmyshow.com/"+city+"/movies") #Passing URL to the function
