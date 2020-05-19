@@ -1,5 +1,5 @@
 import requests                #For making request to a web page and print response text                                                                 
-from bs4 import BeautifulSoup  #Python library for web scraping (for puling data out of tml and xml file)
+from bs4 import BeautifulSoup  #Python library for web scraping (for pulling data out of html and xml file)
 
 
 def movies_in_city(url):
