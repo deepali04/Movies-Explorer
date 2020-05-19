@@ -9,15 +9,15 @@ def movies_in_theatre(url):
     soup=BeautifulSoup(text,"html.parser")          #Beautiful soup object (soup) --- parsing it to Beautifulsoup constructor
     movie_name="Movies_near_me @BookmyShow"+"\n\n"  
     i=1
-    for link in soup.findAll('a',{'class':'__movie-name'}):
-        title=link.get('title')
-        link="https://in.bookmyshow.com"+link.get('href')
-        movie_name+=str(i)+"."+title+" "+link+"\n"
+    for link in soup.findAll('a',{'class':'__movie-name'}):  # finding all (<a> tag) movie names
+        title=link.get('title')                              # storing title
+        link="https://in.bookmyshow.com"+link.get('href')    # getting booking link
+        movie_name+=str(i)+"."+title+" "+link+"\n"           # storing movie nanme title and booking link at one place
         i+=1
 
-    fw = open('Movies_in_my_city.txt', 'w')
-    fw.write(movie_name)
-    fw.close()
+    fw = open('Movies_in_my_city.txt', 'w')         # Creating and opening a file named Movies_in_my_city.txt in write mode
+    fw.write(movie_name)                            # writing movie_name variable (having all data) in this file
+    fw.close()                                      #closing the file
 
 city=input("Enter a valid city name: ")
-movies_in_theatre("https://in.bookmyshow.com/"+city+"/movies")
+movies_in_theatre("https://in.bookmyshow.com/"+city+"/movies") #Passing URL to the function
