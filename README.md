@@ -9,6 +9,30 @@ When you run the project in python environment, it will ask you to enter city na
 
 * **BeautifulSoup:** Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
 
+### Code Explaination:
+
+```
+import requests
+from bs4 import BeautifulSoup 
+```
+
+Here we are importing the request and beautifulsoup libraries.
+
+```
+code=requests.get(url)
+```
+Here code is a variable we are sending GET request to the specified URL and saving response returned by response object in code variable.
+
+```
+text=code.text  
+```
+Reading text from response object.
+
+```
+soup=BeautifulSoup(text,"html.parser") 
+```
+Soup is a Beautiful soup object. We are parsing the text to Beautifulsoup's constructor.
+
 ### Running the Project:
 
 * Run command **python  movies.py**  (here movies.py is my file name)
