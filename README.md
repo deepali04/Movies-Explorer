@@ -33,6 +33,14 @@ soup=BeautifulSoup(text,"html.parser")
 ```
 Soup is a Beautiful soup object. We are parsing the text to Beautifulsoup's constructor.
 
+```
+for link in soup.findAll('a',{'class':'__movie-name'}):
+    title=link.get('title')                            
+    link="https://in.bookmyshow.com"+link.get('href')  
+    movie_name+=str(i)+"."+title+" "+link+"\n"       
+```       
+Here we are finding all <a> tags, storing title from movies, getting booking link and storing movie nanme title and booking link in one variable.
+
 ### Running the Project:
 
 * Run command **python  movies.py**  (here movies.py is my file name)
