@@ -41,6 +41,13 @@ for link in soup.findAll('a',{'class':'__movie-name'}):
 ```       
 Here we are finding all <a> tags, storing title from movies, getting booking link and storing movie nanme title and booking link in one variable.
 
+```
+fw = open('Movies_in_city.txt', 'w') 
+    fw.write(movie_name)
+    fw.close()   
+```
+Here we are creating a file 'Movies_in_city.txt'in the same folder and storing the output in the file.
+
 ### Running the Project:
 
 * Run command **python  movies.py**  (here movies.py is my file name)
